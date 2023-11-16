@@ -4,18 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+    <link href="css/overlayscrollbars.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    ></script>
+    <script src="js/chart.min.js" defer></script>
     <script src="js/script.js" type="module"></script>
 
     <title>MoneySafe</title>
   </head>
 
   <body>
-    <h1 class="visually-hidden">
-      Сохрани свои деньги, зарабатывай и трать их с умом, а мы поможем это
-      контролировать
-    </h1>
     <section class="finance">
+      <h1 class="visually-hidden">
+        Сохрани свои деньги, зарабатывай и трать их с умом, а мы поможем это
+        контролировать
+      </h1>
       <div class="container">
         <header class="finance__header">
           <img
@@ -128,19 +137,19 @@
           <div class="container report__container">
             <h2 class="report__title">Отчет</h2>
 
-            <div class="report__dates">
+            <form class="report__dates">
               <div class="report__date">
                 <label for="start-date">Начало периода</label>
-                <input type="date" id="start-date" />
+                <input type="date" id="start-date" name="startDate" />
               </div>
 
               <div class="report__date">
                 <label for="end-date">Конец периода</label>
-                <input type="date" id="end-date" />
+                <input type="date" id="end-date" name="endDate" />
               </div>
 
               <button class="report__button">Показать</button>
-            </div>
+            </form>
 
             <table class="report__table">
               <thead>
@@ -155,46 +164,7 @@
                 </tr>
               </thead>
 
-              <tbody>
-                <tr class="report__row">
-                  <td class="report__cell">Продукты питания</td>
-                  <td class="report__cell">1000</td>
-                  <td class="report__cell">Магазин Spar</td>
-                  <td class="report__cell">01.01.2021</td>
-                  <td class="report__cell">расход</td>
-                  <td class="report__action-cell">
-                    <button class="report__button report__button_table">
-                      &#10006;
-                    </button>
-                  </td>
-                </tr>
-
-                <tr class="report__row">
-                  <td class="report__cell">Продукты питания</td>
-                  <td class="report__cell">1000</td>
-                  <td class="report__cell">Магазин Spar</td>
-                  <td class="report__cell">01.01.2021</td>
-                  <td class="report__cell">расход</td>
-                  <td class="report__action-cell">
-                    <button class="report__button report__button_table">
-                      &#10006;
-                    </button>
-                  </td>
-                </tr>
-
-                <tr class="report__row">
-                  <td class="report__cell">Продукты питания</td>
-                  <td class="report__cell">1000</td>
-                  <td class="report__cell">Магазин Spar</td>
-                  <td class="report__cell">01.01.2021</td>
-                  <td class="report__cell">расход</td>
-                  <td class="report__action-cell">
-                    <button class="report__button report__button_table">
-                      &#10006;
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody class="report__operation-list"></tbody>
             </table>
 
             <button class="report__add-button" id="generateChartButton">
@@ -202,7 +172,7 @@
             </button>
 
             <div class="report__chart">
-              <canvas id="myChart"></canvas>
+              <!-- <canvas id="myChart"></canvas> -->
             </div>
 
             <button class="report__close">&#10006;</button>
