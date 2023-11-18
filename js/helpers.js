@@ -34,7 +34,7 @@ export const animationNumber = (element, number) => {
     if (currentFrame < totalFrame) {
       requestAnimationFrame(animate);
     } else {
-      element.textContent = `${newNumber.toLocaleString('RU-ru')} Br`;
+      element.textContent = `${number.toLocaleString('RU-ru')} Br`;
     }
   };
 
