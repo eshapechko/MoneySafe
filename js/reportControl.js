@@ -128,6 +128,7 @@ export const reportControl = () => {
 
     actualData = await getData(url);
     renderReport(actualData);
+    clearChart();
   });
 };
 
